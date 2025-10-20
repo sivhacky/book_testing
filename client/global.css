@@ -1,0 +1,98 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   */
+  :root {
+    /* Terminal-esque dark palette */
+    --background: 210 22% 7%; /* deep slate */
+    --foreground: 210 15% 92%; /* near-white */
+
+    --card: 210 20% 9%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 210 22% 7%;
+    --popover-foreground: 210 15% 92%;
+
+    --primary: 145 65% 45%; /* green */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 16% 14%;
+    --secondary-foreground: 210 15% 92%;
+
+    --muted: 210 16% 18%;
+    --muted-foreground: 210 12% 70%;
+
+    --accent: 145 65% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 16% 20%;
+    --input: 210 16% 20%;
+    --ring: 145 65% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 22% 7%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 145 65% 45%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 16% 14%;
+    --sidebar-accent-foreground: 210 15% 92%;
+    --sidebar-border: 210 16% 20%;
+    --sidebar-ring: 145 65% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground; 
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+
+  code, kbd, pre, samp {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .terminal-grid {
+    background-image: radial-gradient(rgba(20, 255, 120, 0.05) 1px, transparent 1px);
+    background-size: 12px 12px;
+    background-position: -1px -1px;
+  }
+  .glow {
+    text-shadow: 0 0 10px rgba(20, 255, 120, 0.4), 0 0 24px rgba(20, 255, 120, 0.2);
+  }
+}
